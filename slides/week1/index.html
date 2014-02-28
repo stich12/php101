@@ -1,0 +1,630 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>PHP Week 1</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="css/reveal.min.css">
+		<link rel="stylesheet" href="css/print/pdf.css">
+		<link rel="stylesheet" href="css/theme/default.css" id="theme">
+
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+			  <section>
+			    <h2>PHP 101</h2>
+        </section>
+
+        <section>
+          <h2>What is PHP?</h2>
+          <p class="fragment" data-fragment-index="0">PHP is a popular general-purpose scripting language that is especially suited to web development.</p>
+          <p class="fragment" data-fragment-index="1">Fast, flexible and pragmatic, PHP powers everything from your blog to the most popular websites in the world.</p>
+          <aside class="notes">
+          <p>PHP is a programming language that can do all sorts of things: evaluate form data sent from a browser, build custom web content to serve the browser, talk to a database, and even send and receive cookies (little packets of data that your browser uses to remember things, like if you’re logged in to a web site).</p>
+          <p>Now open week1-sample.php.  If any of you are familiar with html you may notice that the PHP code is written in the <?php ?> tags.  See how it generates numbers, creates lists, and adds text directly to your webpage?</p>
+          <p>Syntax might be a little daunting, but it's very simple to learn.</p>
+          </aside>
+        </section>
+
+        <section>
+          <h2>History Lesson</h2>
+          <p class="fragment" data-fragment-index="0">PHP originally meant Personal Home Page, but now PHP: Hypertext Preprocessor.</p>
+          <p class="fragment" data-fragment-index="1">Files end with .php and not .html</p>
+
+          <aside class="notes">
+            <p>Create by Rasmus Lerdorf in 1995.</p>
+            <p>Used to maintain his personal home page, hence the name.</p>
+            <p>But the language has grown to be one of the most popular today.</p>
+            <p>.php file type allows the PHP interpreter that there is PHP code in the file to evaluate.</p>
+          </aside>
+        </section>
+
+        <section>
+          <h2>Why PHP?</h2>
+          <p>Why should I learn this!?</p>
+          <pre class="fragment" data-fragment-index="0">
+            <code class="php" data-trim contenteditable>
+              &lt;?php echo "Andre Dublin"; ?&gt;
+            </code>
+          </pre>
+          <p class="fragment" data-fragment-index="1">Andre Dublin</p>
+          <aside class="notes">
+            <p>So what? You might say.  “I can do that with another language.” And you’d be right, but all languages have their pros and cons.</p>
+            <p>PHP runs on the same computer as the website you’re visiting, which is known as the server.  This means that it has access to all the information and files on that machine, which allows it to construct custom HTML pages to send to your browser, handle cookies, and run tasks or perform calculations with data from that website.</p>
+            <p>Open first-script.php exercise</p>
+          </aside>
+        </section>
+
+        <section>
+          <h2>PHP Tags</h2>
+          <p>All PHP code exists within this tag.</p>
+          <pre>
+            <code class="php" data-trim contenteditable>
+              &lt;?php ?&gt; // correct syntax
+            </code>
+          </pre>
+          <pre>
+            <code class="php" data-trim contenteditable>
+              &lt;?php&gt; &lt;?&gt; // incorrect syntax
+            </code>
+          </pre>
+          <aside class="notes">
+            <p>Incorrect syntax will return a parse error</p>
+          </aside>
+        </section>
+
+        <section>
+          <h2>Echo</h2>
+          <p>You will see and use this... a lot!</p>
+          <aside class="notes">
+            <p>Echo is a PHP command that tells PHP to echo back information.</p>
+            <p>Open echo.php and write echo statement.</p>
+          </aside>
+        </section>
+
+        <section>
+          <h2>Math</h2>
+          <p>18 * 527</p>
+          <aside class="notes">
+            <p>Programming langauges like PHP can do comples math for us.</p>
+            <p>Notice that we don't have to put quotes around your numbers.</p>
+            <p>Open math.php and echo the math statement</p>
+            <p>Answer 9,486</p>
+          </aside>
+        </section>
+
+        <section>
+          <h2>Strings</h2>
+          <p>A string is a word or phrase between quotes: "Hey you guys!"</p>
+          <pre>
+            <code class="php" data-trim contenteditable>
+              &lt;?php echo "Hey you guys!"; ?&gt;
+            </code>
+          </pre>
+          <pre>
+            <code class="php" data-trim contenteditable>
+              &lt;?php echo "Hey" . "you" . "guys" . "!"; ?&gt;
+            </code>
+          </pre>
+
+          <aside class="notes">
+            <p>Or you can use the <b>concatenation operator</b>, which glues several strings together.</p>
+            <p>The concatenation operator is just a dot ( . ).</p>
+            <p>Open strings.php file, build and echo a string.</p>
+          </aside>
+        </section>
+
+        <section>
+          <h2>Variables</h2>
+          <p>A variable is just a name PHP uses to keep track of a value.</p>
+          <pre>
+            <code class="php" data-trim contenteditable>
+              &lt;?php $total = 1 + 2 + 8 + 5 + 13 + 3 + 21; ?&gt;
+              &lt;?php echo $total; ?&gt; // 53
+            </code>
+          </pre>
+          <p class="fragment" data-fragment-index="0">The = sign is called <b>assignment operator</b></p>
+          <pre class="fragment" data-fragment-index="1">
+            <code class="php" data-trim contenteditable>
+              &lt;?php $year = 2014; ?&gt;
+            </code>
+          </pre>
+          <pre class="fragment" data-fragment-index="2">
+            <code class="php" data-trim contenteditable>
+              &lt;?php $myFirstVariable = 0; ?&gt;
+            </code>
+          </pre>
+          <aside class="notes">
+            <p>We tell PHP to take the sum of these numbers and store that sum under the name $total.</p>
+            <p>= is used to tell PHP you want to assign a name to a value.</p>
+            <p>All variables in PHP start with a dollar sign ( $ ), called a sigle.</p>
+            <p>Open variables.php</p>
+          </aside>
+        </section>
+
+        <section>
+          <h2>Semicolons</h2>
+          <p>;</p>
+          <aside class="notes">
+            <p>You’ve probably noticed that our lines of PHP code end in semicolons ( ; ). PHP requires semicolons at the end of each statement, which is the shortest unit of standalone code. (For example, echo “Hello!”; or 2 + 2; )</p>
+          </aside>
+        </section>
+
+        <section>
+          <h2>Comments</h2>
+          <pre class="fragment" data-fragment-index="0"><code class="html" data-trim contenteditable>&lt;!-- I'm a comment --&gt;</code></pre>
+          <pre class="fragment" data-fragment-index="1"><code class="php" data-trim contenteditable>&lt;?php // I'm a comment ?&gt;</code></pre>
+          <aside class="notes">
+            <p>Just like we sometimes put comments in our CSS (using /* this syntax */) or in our HTML (using <!-- this syntax -->), we can also put comments in our PHP code! We do that using two forward slashes (//), like so:</p>
+            <p>Open semicolon-comment.php file</p>
+          </aside>
+        </section>
+
+        <section>
+          <h2>All Together Now</h2>
+          <aside class="notes">
+            <p>Open alltogethernow.php file</p>
+          </aside>
+        </section>
+
+        <section>
+          <h2>Control & Flow</h2>
+          <aside class="notes">
+            <p>Oftentimes we’ll want our programs to respond differently depending on user input or the values of certain variables.</p>
+            <p>Control flow is a way of telling our program which statements or instructions to perform. That sounds tricky, but it’s really quite easy! It’s just a way of teaching our programs how to make decisions.</p>
+            <p>Open control-flow.php file</p>
+          </aside>
+        </section>
+
+        <section>
+          <h2>Making Comparisons</h2>
+          <pre class="fragment" data-fragment-index="0"><code class="php" data-trim contenteditable>&lt;  ex. 6 &lt; 7 // less than</code></pre>
+          <pre class="fragment" data-fragment-index="1"><code class="php" data-trim contenteditable>&gt;  ex. 7 &gt; 6 // greater than</code></pre>
+          <pre class="fragment" data-fragment-index="2"><code class="php" data-trim contenteditable>==  ex. 2 == 2 // equal to</code></pre>
+          <pre class="fragment" data-fragment-index="3"><code class="php" data-trim contenteditable>&lt;=  ex. 2 &lt;= 3 // less than or equal to</code></pre>
+          <pre class="fragment" data-fragment-index="4"><code class="php" data-trim contenteditable>&gt;=  ex. 3 &gt;= 2 // greater than or equal to</code></pre>
+          <pre class="fragment" data-fragment-index="5"><code class="php" data-trim contenteditable>!=  ex. 6 != 3 // not equal to</code></pre>
+          <aside class="notes">
+            <p>triple equals checks value and type, double equal checks value</p>
+            <p>&lt;&gt; is not equal by checking type</p>
+            <p>Open comparison.php</p>
+          </aside>
+        </section>
+
+        <section>
+          <h2>If Statements</h2>
+          <aside class="notes">
+            <p>With an if statement we’re trying to find something that’s true.  If the thing we’re testing is true, then we’ll continue executing this section of the code.</p>
+            <p>Open ifstatement.php file</p>
+          </aside>
+        </section>
+
+        <section>
+          <h2>Else</h2>
+          <pre><code class="php" data-trim contenteditable>
+&lt;?php
+if (10 < 5) {
+  echo "Is less than five";
+} else {
+  echo "Is not less than five";
+}
+?&gt;
+          </code></pre>
+          <aside class="notes">
+            <p>else statements provide use with running code when a statement turns out to be false;</p>
+            <p>Add else statement to ifstatement.php, show else can't vote yet.</p>
+          </aside>
+        </section>
+
+        <section>
+          <h2>Elseif</h2>
+          <pre class="fragment" data-fragment-index="0"><code class="php" data-trim contenteditable>
+&lt;?php
+if ($guess &lt; $number) {
+  echo "Your guess is too low";
+} elseif ($guess &gt; $number) {
+  echo "Your guess is too high";
+} else {
+  echo "You guessed right!";
+}
+?&gt;
+          </code></pre>
+          <aside class="notes">
+            <p>Elseif applies an extra check in our if/else statement. Show example.</p>
+            <p>Add elseif statement to ifstatement.php to check for age of 21 years.</p>
+          </aside>
+        </section>
+
+        <section>
+          <h2>All Together Now</h2>
+          <aside class="notes">
+            <p>Open alltogethernow2.php file</p>
+          </aside>
+        </section>
+
+        <section>
+          <h2>Switch</h2>
+          <pre class="fragment" data-fragment-index="0"><code class="php"> &lt;?php
+$value = 2;
+switch ($value) {
+  case 0:
+      echo 'The value is 0';
+      break;
+  case 1:
+      echo 'The value is 1';
+      break;
+  case 2:
+      echo 'The value is 2';
+      break;
+  default:
+      echo "The value isn't 0, 1 or 2";
+?&gt; </code></pre>
+          <aside class="notes">
+            <p>A switch statement comes in handy when you have a series of if / elseif / else statements with multiple expressions that depend on the same value.</p>
+            <p>The switch statement also provides a bit of efficiency and readability.  Switches work like if statements, if a condition is true, it executes a block of code.</p>
+            <p>Ask who can tell you what will happen in this switch statement</p>
+          </aside>
+        </section>
+
+        <section>
+          <h2>Switch Syntax</h2>
+          <pre><code class="php"> &lt;?php
+$value = 2;
+switch ($value) {
+  case 0:
+      echo 'The value is 0';
+      break;
+  case 1:
+      echo 'The value is 1';
+      break;
+  case 2:
+      echo 'The value is 2';
+      break;
+  default:
+      echo "The value isn't 0, 1 or 2";
+?&gt; </code></pre>
+          <aside class="notes">
+            <p>A switch statement accepts only one argument and that is the value that you make the expressions on.  The keyword case is followed by the value being compared (or an expression) and a : .</p>
+            <p>A default case is a special case.  You make it like a normal case, but instead of using the keyword case and a condition, you type default: . switch doesn’t require a default case, but it does require breaks to mark where the current case block ends.  If no breaks are defined, when a case is matched, all the cases below get executed.</p>
+            <p>On the other hand, the default case gets executed if all the other cases return false.</p>
+            <p>Open switch-syntax.php file</p>
+          </aside>
+        </section>
+
+        <section>
+          <h2>Multiple cases</h2>
+          <pre class="fragment" data-fragment-index="0"><code class="php" data-trim contenteditable>&lt;?php
+if ($i == 1 || $i == 2 || $i == 3) {
+ echo '$i is somewhere between 1 and 3.';
+}
+?&gt;</code></pre>
+          <pre class="fragment" data-fragment-index="1"><code class="php" data-trim contenteditable>&lt;?php
+switch ($i) {
+  case 1:
+  case 2:
+  case 3:
+      echo '$i is somewhere between 1 and 3.';
+      break;
+}
+?&gt;</code></pre>
+          <aside class="notes">
+            <p>You sometimes want to make multiple expressions, all of which have the same result.</p>
+            <p>With a switch statement, you can do this by adding cases right after another without a break.  This is called falling through.  The following code works exactly like the above if statement</p>
+            <p>Open multiple-switch.php file</p>
+          </aside>
+        </section>
+
+        <section>
+          <h2>Alternative Syntax</h2>
+          <pre><code class="php" data-trim contenteditable>&lt;?php
+switch($i):
+  case 1:
+  case 2:
+  case 3:
+      echo '$i is somewhere between 1 and 3.';
+      break;
+endswitch;
+?&gt;</code></pre>
+        </section>
+
+        <section>
+          <h2>Switch it yourself</h2>
+          <aside class="notes">
+            <p>Open file switch-it.php</p>
+          </aside>
+        </section>
+
+        <section>
+          <h2>Arrays?</h2>
+          <pre><code class="php" data-trim contenteditable>&lt;?php
+$myArray = array("Bread", "Cheese", "Turkey");
+?&gt;</code></pre>
+          <aside class="notes">
+            <p>In Php an array is a list of items, kind of like a shopping list, you could have a separate piece of paper for each shopping list item, but it would be easier with one.</p>
+          </aside>
+        </section>
+
+        <section>
+          <h2>Array Syntax</h2>
+          <pre class="fragment" data-fragment-index="0"><code class="php" data-trim contenteditable>&lt;?php
+$myArray = array("Bread", "Cheese", "Turkey");
+?&gt;</code></pre>
+          <pre class="fragment" data-fragment-index="1"><code class="php" data-trim contenteditable>&lt;?php
+// as of PHP 5.4
+$myArray = ["Bread", "Cheese", "Turkey"];
+?&gt;</code></pre>
+          <aside class="notes">
+            <p>Explain array syntax and 5.4 differences.</p>
+          </aside>
+        </section>
+
+        <section>
+          <h2>Your first array</h2>
+          <aside class="notes">
+            <p>Open buddies.php file</p>
+          </aside>
+        </section>
+
+        <section>
+          <h2>Accessing Array Elements</h2>
+          <pre class="fragment" data-fragment-index="0"><code class="php" data-trim contenteditable>&lt;?php 
+$numbers = array(1, 2, 3, 4, 5);
+echo $nubmers[3]; // 4
+?&gt;</code></pre>
+          <pre class="fragment" data-fragment-index="1"><code class="php" data-trim contenteditable>&lt;?php 
+$numbers = array(1, 2, 3, 4, 5);
+echo $nubmers{3}; // 4
+?&gt;</code></pre>
+          <aside class="notes">
+            <p>Arrays are zero indexed</p>
+            <p>Access third element in your buddies array and print it out</p>
+          </aside>
+        </section>
+
+        <section>
+          <h2>Modifying Array Elements</h2>
+          <pre class="fragment" data-fragment-index="0"><code class="php" data-trim contenteditable>&lt;?php 
+$colors = array("red", "bliue", "green");
+$colors = array(
+  0 => "red",
+  1 => "blue",
+  2 => "green"
+);
+?&gt;</code></pre>
+          <pre class="fragment" data-fragment-index="1"><code class="php" data-trim contenteditable>&lt;?php 
+$numbers = array(1, 2, 3, 4, 5);
+$nubmers[3] = "Andre"; // array(1, 2, 3 ,"Andre", 5);
+echo $numbers[3]; // Andre
+?&gt;</code></pre>
+          <aside class="notes">
+            <p>Access third element in your buddies array and print it out</p>
+          </aside>
+        </section>
+
+        <section>
+          <h2>Deleting Array Elements</h2>
+          <pre><code class="php" data-trim contenteditable>&lt;?php 
+$numbers = array(1, 2, 3, 4, 5);
+$numbers[3] = "Andre"; // array(1, 2, 3 ,"Andre", 5);
+echo $numbers[3]; // Andre
+
+unset($numbers[3]); // array(1, 2, 3, , 5);
+echo $numbers[3];
+
+unset($numbers);
+echo $numbers;
+?&gt;</code></pre>
+          <aside class="notes">
+            <p>Array values can be removed with the function unset</p>
+            <p>An entire array can be emptied with unset</p>
+          </aside>
+        </section>
+
+        <section>
+          <h2>What is a Loop?</h2>
+          <pre><code class="php" data-trim contenteditable>&lt;?php
+for ($i = 0; $i < 10; $i++) {
+  echo "<p>$i</p>";
+}
+// 0
+// 1
+// 2
+// 3
+// 4
+// 5
+// 6
+// 7
+// 8
+// 9
+?&gt;</code></pre>
+          <aside class="notes">
+            <p>Loops can be useful for repeating a series of instructions for us.</p>
+          </aside>
+        </section>
+
+        <section>
+          <h2>For Loop Syntax</h2>
+          <aside class="notes">
+            <p>Open for-syntax.php file</p>
+          </aside>
+        </section>
+
+        <section>
+          <h2>Your First For Loop</h2>
+          <aside class="notes">
+            <p>Open first-for.php file</p>
+            <p>Alternative to incrementing by 10 or 5 would be to use the modulus</p>
+          </aside>
+        </section>
+
+        <section>
+          <h2>Foreach Loops</h2>
+          <pre><code class="php">
+&lt;ul&gt;
+&lt;?php
+$langs = array("PHP", "Ruby", "Golang", "C#", "Java", "R", "Matlab", "Octave");
+
+foreach ($langs as $lang) {
+  echo "&lt;li&gt;"$lang"&lt;/li&gt;";
+}
+?&gt;
+&lt;/ul&gt;
+          </code></pre>
+          <aside class="notes">
+            <p>Foreach is used for iterating over objects and arrays</p>
+          </aside>
+        </section>
+
+        <section>
+          <h2>Your Own Foreach</h2>
+          <aside class="notes">
+            <p>Open first-foreach.php file</p>
+          </aside>
+        </section>
+
+        <section>
+          <h2>While Loops</h2>
+          <p>We are going to flip a coin until we get three heads in a row!</p>
+          <pre><code class="php" data-trim contenteditable>
+&lt;?php
+  $headCount = 0;
+  $flipCount = 0;
+  while ($headCount < 3) {
+    $flip = rand(0, 1);
+    $flipCount++;
+
+    if ($flip) {
+      $headCount ++;
+      echo "<div class='coin'>H</div>";
+    } else {
+      $headCount = 0;
+      echo "<div class='coin'>T</div>";
+    }
+  }
+  echo "<p>It took {$flipCount} flips!</p>";
+?&gt;
+          </code></pre>
+        </section>
+
+        <section>
+          <h2>While Loop Syntax</h2>
+          <pre><code class="php" data-trim contenteditable>
+&lt;?php
+  $headCount = 0;
+  $flipCount = 0;
+  while ($headCount < 3) {
+    $flip = rand(0, 1);
+    $flipCount++;
+
+    if ($flip) {
+      $headCount ++;
+      echo "<div class='coin'>H</div>";
+    } else {
+      $headCount = 0;
+      echo "<div class='coin'>T</div>";
+    }
+  }
+  echo "<p>It took {$flipCount} flips!</p>";
+?&gt;
+          </code></pre>
+          <aside class="notes">
+            <p>Same curly braces</p>
+            <p>Mention endwhile</p>
+          </aside>
+        </section>
+
+        <section>
+          <h2>Do While</h2>
+          <pre><code class="php" data-trim contenteditable>
+&lt;?php
+  $flipCount = 0;
+
+  do {
+    $flip = rand(0, 1);
+    $flipCount++;
+
+    if ($flip) {
+      $headCount ++;
+      echo "<div class='coin'>H</div>";
+    } else {
+      $headCount = 0;
+      echo "<div class='coin'>T</div>";
+    }
+  } while ($flip);
+
+  $verb = "were";
+  $last = "flips";
+
+  if ($flipCount == 1) {
+    $verb = "was";
+    $last = "flip";
+  }
+  echo "<p>There {$verb} {$flipCount} {$last}!</p>";
+?&gt;
+          </code></pre>
+          <aside class="notes">
+            <p>while loop checks the condition before each iteration of the code block.</p>
+            <p>do/while loops check the condition after each iteration of the code block.</p>
+          </aside>
+        </section>
+
+        <section>
+          <h2>All Together Now</h2>
+          <aside class="notes">
+            <p>Open dowhile.php file</p>
+          </aside>
+        </section>
+
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.min.js"></script>
+
+		<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+				// Parallax scrolling
+				// parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
+				// parallaxBackgroundSize: '2100px 900px',
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
