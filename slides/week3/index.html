@@ -1,0 +1,281 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>reveal.js - The HTML Presentation Framework</title>
+
+		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+		<meta name="author" content="Hakim El Hattab">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="css/reveal.min.css">
+		<link rel="stylesheet" href="css/theme/default.css" id="theme">
+
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- If the query includes 'print-pdf', use the PDF print sheet -->
+		<script>
+			document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+        <section>
+          <h2>Associative and Multi-dimensional Arrays</h2>
+          <pre><code class="php" data-trim contenteditable>
+&lt;?php
+$myarray = array(
+  "one" => "one",
+  "two" => 2,
+  "three" => array(
+    "sub_one" => "sub_one",
+    "sub_two" => 2,
+    "sub_three" => array(1, 2, 3)
+  )
+);
+?&gt;
+          </code></pre>
+          <aside class="notes">
+            <p>An associative aray makes use of key => value pairs</p>
+            <p>Some languages have different constructs for different types of arrays, but PHP uses only one</p>
+          </aside>
+        </section>
+
+        <section>
+          <h2>Working with associative arrays</h2>
+          <pre><code class="php" data-trim contenteditable>
+&lt;?php
+$car = array(2014, "black", 4);
+$car = array(
+  "year" => 2012,
+  "color" => "black",
+  "doors" => 4
+);
+
+$car["make"] = "BMW";
+unset($car["year"]);
+
+array_key_exists("year", $car); // false
+array_key_exists("doors", $car); // true
+
+foreach ($car as $key => $value) {
+  echo $key . ": " . $value;
+  echo $car[$key];
+}
+
+foreach ($car as $value) {
+  echo $value;
+}
+
+for ($i = 0; $i < count($car); $i++) {
+  echo $car[$i]; // undefined offset: 0/1/2
+}
+?&gt;
+          </code></pre>
+          <aside class="notes">
+            <p>Just like normal arrays, associative arrays can be manipulated the same way</p>
+            <p>array key exists good for checking when you don't know if a key will be there when iterating over an array</p>
+            <p>You can only iterate over associative arrays with a foreach statement</p>
+            <p>Open associative-array.php file</p>
+          </aside>
+        </section>
+
+        <section>
+          <h2>Working with Multi-dimensional arrays</h2>
+          <pre><code class="php" data-trim contenteditable>
+&lt;?php
+?&gt;
+          </code></pre>
+          <aside class="notes">
+            <p>You will most likely come across arrays 2 to 3 levels deep</p>
+            <p>Create indexed multi dimensional arrays for the class</p>
+            <p>In the previous exercise that was a two dimensional array</p>
+            <p>Open multi-array.php file</p>
+          </aside>
+        </section>
+
+        <section>
+          <h2>Object Oriented Programming</h2>
+          <pre><code class="php" data-trim contenteditable>
+&lt;?php
+public class Bicycle
+{
+  public $size;
+  public $chain;
+  public $tireSize;
+
+  public function __construct($size, $chain, $tireSize)
+  {
+    $this->size = $size;
+    $this->chain = $chain;
+    $this->tireSize = $tireSize;
+  }
+
+  public function tireSize()
+  {
+    return "The tire size is " . $this->tireSize . " inches";
+  }
+}
+
+$bike = new Bike("26", "10-speed", "23");
+echo $bike->tireSize(); // 23
+echo $bike->chain; // 10-speed
+?&gt;
+          </code></pre>
+          <aside class="notes">
+          <p>Classes consist of methods and properties</p>
+          <p>This trivial example shows a bike class with three properties and one method</p>
+          <p>Classes will appear in frameworks, object relational mappers, and even json</p>
+          <p>Mention that json may produce stdClass objects, which are generic empty classes</p>
+          <p>Show students that pointers are used to access methods and properties</p>
+          </aside>
+        </section>
+
+        <section>
+          <h2>Your first class</h2>
+          <pre><code class="php" data-trim contenteditable>
+&lt;?php
+?&gt;
+          </code></pre>
+          <aside class="notes">
+            <p>Have class coordinate out loud to build a class with three properties and three methods of a car</p>
+            <p>Open first-class.php file</p>
+          </aside>
+        </section>
+
+        <section>
+          <h2>Magic Methods</h2>
+          <pre><code class="php" data-trim contenteditable>
+&lt;?php
+__construct();
+__destruct();
+?&gt;
+          </code></pre>
+          <aside class="notes">
+            <p>__construct is used for initialization</p>
+            <p>__destruct is used for cleaning up or releasing resources</p>
+            <p>You will see these used a lot for setting up class properties, like database information or generic values</p>
+            <p>Make sure to mention other magic methods __call, __callStatic, __get, __set, __isset, __unset, __sleep, __wakeup, __toString, __invoke, __set_state, __clone</p>
+            <p>__call - triggered when invoking inaccessible methods in an object context</p>
+            <p>__callStatic - triggered when invoking inaccessible methods in a static context</p>
+            <p>__get - used for reading data from inaccessible properties</p>
+            <p>__set - used when writing data to inaccessible properties</p>
+            <p>__isset - triggered by calling isset or empty on inaccessible properties</p>
+            <p>__unset - triggered when calling unset on an inaccessible property</p>
+            <p>__sleep - triggered when calling serialize</p>
+            <p>__wakeup - triggered when calling unserialize</p>
+            <p>__toString - allows the class to decide how to react when it is treated like a string</p>
+            <p>__invoke - triggered when a script tries to call an object as a function</p>
+            <p>__set_state - static method trigged by var_export</p>
+            <p>__clone - triggered when an object copy is created by using the clone keyword</p>
+          </aside>
+        </section>
+
+        <section>
+          <h2>Visibility and Inheritance</h2>
+          <pre><code class="php" data-trim contenteditable>
+&lt;?php
+public class Bicycle
+{
+  public $size;
+  public $chain;
+  public $tireSize;
+
+  public function __construct($size, $chain, $tireSize)
+  {
+    $this->size = $size;
+    $this->chain = $chain;
+    $this->tireSize = $tireSize;
+  }
+
+  public function tireSize()
+  {
+    return "The tire size is " . $this->tireSize . " inches";
+  }
+}
+
+public class RoadBike extends Bicycle
+{
+  public function __construct($size, $chain, $tireSize)
+  {
+    $this->size = $size;
+    $this->chain = $chain;
+    $this->tireSize = $tireSize;
+  }
+
+  public function tireSize()
+  {
+    return "The tire size is " . $this->tireSize . " inches";
+  }
+}
+
+$bike = new Bike("26", "10-speed", "23");
+echo $bike->tireSize(); // 23
+echo $bike->chain; // 10-speed
+?&gt;
+          </code></pre>
+          <aside class="notes">
+            <p>Demonstrate private and protected methods</p>
+            <p>Private methods are useful for methods/properties that only the object will care about</p>
+            <p>Protected methods are useful for exposing the methods/properties but not allowing inheritance</p>
+            <p>Make sure to demonstrate the :: scope resolution operator for static, parent and self</p>
+            <p>Late static binding - works by storing the class name in the "last non-forwarding call"</p>
+            <p>Open child-class.php file</p>
+          </aside>
+        </section>
+
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.min.js"></script>
+
+		<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+				// Parallax scrolling
+				// parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
+				// parallaxBackgroundSize: '2100px 900px',
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
