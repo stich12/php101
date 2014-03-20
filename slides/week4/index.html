@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>reveal.js - The HTML Presentation Framework</title>
+
+		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+		<meta name="author" content="Hakim El Hattab">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="css/reveal.min.css">
+    <!--<link rel="stylesheet" href="css/print/pdf.css">-->
+		<link rel="stylesheet" href="css/theme/default.css" id="theme">
+
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- If the query includes 'print-pdf', use the PDF print sheet -->
+		<script>
+			document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+          <h2>Building for the web</h2>
+          <p>Yay we made it!</p>
+          <aside class="notes">
+            <p>PHP's power is that it was a language built for the web.</p>
+            <p>Compared to other languages, PHP has become the whipping boy of the internet</p>
+            <p>But updates to PHP 5.3 and up will bring it back to its heyday from the past</p>
+          </aside>
+				</section>
+
+        <section>
+          <h2>What we care about (for now)</h2>
+          <p>Super globals</p>
+          <p>Query Strings</p>
+          <p>Forms</p>
+          <pre><code class="php" data-trim contenteditable>
+&lt;?php
+$GLOBALS
+$_SERVER
+$_GET
+$_POST
+$_FILES
+$_REQUEST
+$_SESSION
+$_ENV
+$_COOKIE
+?&gt;
+          </code></pre>
+
+          <pre><code class="html" data-trim contenteditable>
+www.example.com/some/path/dudes?foo=bar&fuzz=bazz
+          </code></pre>
+
+          <pre><code class="html" data-trim contenteditable>
+<form action="process.php" method="POST">
+  <input type="text" />
+  <input type="submit" value="Send it off" />
+</form>
+          </code></pre>
+
+          <aside class="notes">
+            <p>$GLOBALS - references all variables in global scope</p>
+            <p>$_SERVER - an associative array containing information such as headers, paths, and script locations</p>
+            <p>$_GET - an associative array of variables passed to the current script via the URL parameters</p>
+            <p>$_POST - associative array of variables passed to the current script via the HTTP POST method</p>
+            <p>$_FILES - associative array of items uploaded to the current script via the HTTP POST method</p>
+            <p>$_REQUEST - associative array that by default contains the contents of GET, POST, and COOKIE</p>
+            <p>$_SESSION - associative array containing session variables available to the current script</p>
+            <p>$_ENV - associative array of variables passed to the current script via the environment method</p>
+            <p>$_COOKIE - associative array of variables passed to the current script via HTTP Cookies</p>
+            <p>Show example of File upload and reading a file</p>
+            <p>Show example of posting arrays</p>
+            <p>Show example of a GET form</p>
+            <p>Show example of SESSIONS</p>
+            <p>Show example of COOKIES</p>
+            <p>Open super-globals.php file</p>
+          </aside>
+        </section>
+
+        <section>
+          <h2>Lets build a guestbook</h2>
+          <p>Use Cases, aka what we'll be working on</p>
+          <ul>
+            <li>Form that records visitor name, age, physical address, email address, and photo if available</li>
+            <li>List all visitors</li>
+          </ul>
+        </section>
+
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.min.js"></script>
+
+		<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+				// Parallax scrolling
+				// parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
+				// parallaxBackgroundSize: '2100px 900px',
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
