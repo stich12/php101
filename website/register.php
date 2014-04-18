@@ -2,27 +2,31 @@
 
 <?php include_once 'navigation.php'; ?>
 
-  <form action="admin/register-submit.php" method="post">
+  <section id="page">
 
-    <p>
-      <label for="username">Username</label>
-      <input type="text" name="username" value="" />
-    </p>
+    <form action="admin/register-submit.php" method="post">
 
-    <p>
-      <label for="password">Password</label>
-      <input type="password" name="password" value="" />
-    </p>
+      <p>
+        <label for="username">Username</label>
+        <input type="text" name="username" value="" />
+      </p>
 
-    <p>
-      <label for="color">Favorite Color</label>
-      <input name="color" type="text" value="" />
-    </p>
+      <p>
+        <label for="password">Password</label>
+        <input type="password" name="password" value="" />
+      </p>
 
-    <button type="submit">Register</button>
+      <p>
+        <label for="color">Favorite Color</label>
+        <input name="color" type="text" value="" />
+      </p>
 
-    <?= inputCSRF(); ?>
-  </form>
+      <button type="submit">Register</button>
+
+      <?= inputCSRF(); ?>
+    </form>
+
+  </section>
 
 <?php require 'sidebar.php'; ?>
 
