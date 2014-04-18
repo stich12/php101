@@ -1,0 +1,2 @@
+<?php
+define('BASEPATH', true);
