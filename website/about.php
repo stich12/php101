@@ -2,9 +2,9 @@
 
 <?php include 'navigation.php'; ?>
 
-  <section id="about-page">
+    <section id="about-page">
 
-  </section>
+    </section>
 
 <?php include 'sidebar.php'; ?>
 

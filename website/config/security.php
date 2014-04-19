@@ -1,19 +1,32 @@
 <?php defined('BASEPATH') || exit('No direct script access allowed');
 
-if ( ! session_id()) {
-  session_start();
+if (!session_id()) {
+    session_start();
 }
 
-function setCSRFToken() {
-  $_SESSION['csrfToken'] = md5(uniqid(mt_rand(), true));
+function setCSRFToken()
+{
+    $_SESSION['csrfToken'] = md5(uniqid(mt_rand(), true));
 }
 
-function CSRFToken() {
-  return $_SESSION['csrfToken'];
+function CSRFToken()
+{
+    return $_SESSION['csrfToken'];
 }
 
-function inputCSRF() {
-  setCSRFToken();
+function inputCSRF()
+{
+    setCSRFToken();
+    return '<input type="hidden" name="csrfToken" value="' . CSRFToken() . '" />';
+}
 
-  return '<input type="hidden" name="csrfToken" value="' . CSRFToken() . '" />';
+function hashPassword($password)
+{
+    $salt = substr(base64_encode(microtime()), 0, 32);
+    return $salt . getPasswordHash($password);
+}
+
+function getPasswordHash($password)
+{
+    return md5($password);
 }

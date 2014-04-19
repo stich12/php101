@@ -2,9 +2,9 @@
 
 <?php include 'navigation.php'; ?>
 
-  <section id="latest-posts">
+    <section id="latest-posts">
 
-  </section>
+    </section>
 
 <?php include 'sidebar.php'; ?>
 
