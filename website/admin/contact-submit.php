@@ -1,7 +1,7 @@
 <?php
 require '../config/security.php';
 
-if (! isset($_POST['csrfToken']) && strcmp($_POST['csrfToken'], $_SESSION['csrfToken']) !== 0) {
+if (! isset($_POST['csrfToken']) && strcmp($_POST['csrfToken'], CSRFToken()) !== 0) {
   setSessionVars($_POST);
   redirect($_SERVER['HTTP_REFERER']);
 } else {
