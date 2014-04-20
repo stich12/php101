@@ -38,15 +38,20 @@ function createUser($user)
 function getUser($username)
 {
     $db = getDBConnection();
-    $sth = $db->prepare('SELECT * FROM \'Users\' WHERE username = :username');
-    $sth->execute(array(
-        ':username' => $db->quote($username)
-    ));
 
-    $result = $sth->fetchAll(PDO::FETCH_ASSOC);
+    if ($db instanceof PDO) {
+        $sth = $db->prepare('SELECT * FROM \'Users\' WHERE username = :username');
+        $sth->execute(array(
+            ':username' => $db->quote($username)
+        ));
 
-    if ($result !== false) {
-        return $result;
+        $result = $sth->fetchAll(PDO::FETCH_ASSOC);
+
+        if ($result !== false) {
+            return $result;
+        } else {
+            // return that there was an error
+        }
     } else {
         // return that there was an error
     }
@@ -55,12 +60,17 @@ function getUser($username)
 function getAllUsers()
 {
     $db = getDBConnection();
-    $sth = $db->prepare('SELECT * FROM \'Users\'');
-    $sth->execute();
-    $result = $sth->fetchAll(PDO::FETCH_ASSOC);
 
-    if ($result !== false) {
-        return $result;
+    if ($db instanceof PDO) {
+        $sth = $db->prepare('SELECT * FROM \'Users\'');
+        $sth->execute();
+        $result = $sth->fetchAll(PDO::FETCH_ASSOC);
+
+        if ($result !== false) {
+            return $result;
+        } else {
+            // return that there was an error
+        }
     } else {
         // return that there was an error
     }
@@ -69,17 +79,22 @@ function getAllUsers()
 function createPost($post)
 {
     $db = getDBConnection();
-    $sth = $db->prepare('INSERT INTO \'Posts\' VALUES (:title, :datetime, :content)');
-    $sth->execute(array(
-        ':title' => $db->quote($post['title']),
-        ':datetime' => $db->quote($post['datetime']),
-        ':content' => $db->quote($post['content'])
-    ));
 
-    $result = $sth->fetchAll(PDO::FETCH_ASSOC);
+    if ($db instanceof PDO) {
+        $sth = $db->prepare('INSERT INTO \'Posts\' VALUES (:title, :datetime, :content)');
+        $sth->execute(array(
+            ':title' => $db->quote($post['title']),
+            ':datetime' => $db->quote($post['datetime']),
+            ':content' => $db->quote($post['content'])
+        ));
 
-    if ($result !== false) {
-        return $result;
+        $result = $sth->fetchAll(PDO::FETCH_ASSOC);
+
+        if ($result !== false) {
+            return $result;
+        } else {
+            // return that there was an error
+        }
     } else {
         // return that there was an error
     }
@@ -88,15 +103,20 @@ function createPost($post)
 function getPost($id)
 {
     $db = getDBConnection();
-    $sth = $db->prepare('SELECT * FROM \'Posts\' WHERE ID = \':id\'');
-    $sth->execute(array(
-       ':id' => $db->quote($id)
-    ));
 
-    $result = $sth->fetchAll(PDO::FETCH_ASSOC);
+    if ($db instanceof PDO) {
+        $sth = $db->prepare('SELECT * FROM \'Posts\' WHERE ID = \':id\'');
+        $sth->execute(array(
+            ':id' => $db->quote($id)
+        ));
 
-    if ($result !== false) {
-        return $result;
+        $result = $sth->fetchAll(PDO::FETCH_ASSOC);
+
+        if ($result !== false) {
+            return $result;
+        } else {
+            // return that there was an error
+        }
     } else {
         // return that there was an error
     }
@@ -105,12 +125,17 @@ function getPost($id)
 function getAllPosts()
 {
     $db = getDBConnection();
-    $sth = $db->prepare('SELECT * FROM \'Posts\'');
-    $sth->execute();
-    $result = $sth->fetchAll(PDO::FETCH_ASSOC);
 
-    if ($result !== false) {
-        return $result;
+    if ($db instanceof PDO) {
+        $sth = $db->prepare('SELECT * FROM \'Posts\'');
+        $sth->execute();
+        $result = $sth->fetchAll(PDO::FETCH_ASSOC);
+
+        if ($result !== false) {
+            return $result;
+        } else {
+            // return that there was an error
+        }
     } else {
         // return that there was an error
     }
@@ -119,12 +144,17 @@ function getAllPosts()
 function getRecentPosts()
 {
     $db = getDBConnection();
-    $sth = $db->prepare('SELECT * FROM \'Posts\' LIMIT 5');
-    $sth->execute();
-    $result = $sth->fetchAll(PDO::FETCH_ASSOC);
 
-    if ($result !== false) {
-        return $result;
+    if ($db instanceof PDO) {
+        $sth = $db->prepare('SELECT * FROM \'Posts\' LIMIT 5');
+        $sth->execute();
+        $result = $sth->fetchAll(PDO::FETCH_ASSOC);
+
+        if ($result !== false) {
+            return $result;
+        } else {
+            // return that there was an error
+        }
     } else {
         // return that there was an error
     }
