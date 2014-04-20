@@ -52,6 +52,20 @@ function getUser($username)
     }
 }
 
+function getAllUsers()
+{
+    $db = getDBConnection();
+    $sth = $db->prepare('SELECT * FROM \'Users\'');
+    $sth->execute();
+    $result = $sth->fetchAll(PDO::FETCH_ASSOC);
+
+    if ($result !== false) {
+        return $result;
+    } else {
+        // return that there was an error
+    }
+}
+
 function createPost($post)
 {
     $db = getDBConnection();
@@ -79,6 +93,20 @@ function getPost($id)
        ':id' => $db->quote($id)
     ));
 
+    $result = $sth->fetchAll(PDO::FETCH_ASSOC);
+
+    if ($result !== false) {
+        return $result;
+    } else {
+        // return that there was an error
+    }
+}
+
+function getAllPosts()
+{
+    $db = getDBConnection();
+    $sth = $db->prepare('SELECT * FROM \'Posts\'');
+    $sth->execute();
     $result = $sth->fetchAll(PDO::FETCH_ASSOC);
 
     if ($result !== false) {

@@ -6,9 +6,9 @@ function redirect($url)
   header('Location: ' . $url);
 }
 
-function setSessionVars($postArrary)
+function setSessionVars($postArray)
 {
-  foreach ($postArrary as $key => $value) {
+  foreach ($postArray as $key => $value) {
     $_SESSION[$key] = $value;
   }
 }
