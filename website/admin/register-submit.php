@@ -26,7 +26,7 @@ if (!isset($_POST['csrfToken']) && strcmp($_POST['csrfToken'], CSRFToken()) !== 
 
     if ($result['success'] !== false) {
         $_SESSION['message'] = $result['message'];
-        setcookie('color', $result['color'], 0);
+        setcookie('color', $result['color'], 0, '/');
         redirect($_SERVER['HTTP_REFERER']);
     } else {
         $_SESSION['message'] = $result['message'];

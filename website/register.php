@@ -1,8 +1,6 @@
 <?php include 'header.php'; ?>
 
-<?php include_once 'navigation.php';
-var_dump($_COOKIE);
-?>
+<?php include_once 'navigation.php'; ?>
 
     <section id="page">
 

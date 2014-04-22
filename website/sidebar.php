@@ -47,6 +47,10 @@
 
         <?php } ?>
 
+        <?php if (isset($_COOKIE['color'])) : ?>
+            <p>Welcome back, your favorite color is <?= $_COOKIE['color']; ?></p>
+        <?php endif; ?>
+
     </div>
 
 </aside>
