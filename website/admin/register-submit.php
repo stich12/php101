@@ -1,19 +1,13 @@
-<?php //defined('BASEPATH') || exit('No direct script access allowed');
-
-echo '<pre>';
-var_dump($_POST);
-echo '</pre>';
-exit;
-
+<?php
 require_once '../config/access.php';
 require_once '../config/security.php';
 require_once '../config/database.php';
+require_once '../config/redirect.php';
 
 if (!isset($_POST['csrfToken']) && strcmp($_POST['csrfToken'], CSRFToken()) !== 0) {
     setSessionVars($_POST);
     redirect($_SERVER['HTTP_REFERER']);
 } else {
-
     $username = $_POST['username'];
     $password = $_POST['password'];
     $color = $_POST['color'];
@@ -28,8 +22,15 @@ if (!isset($_POST['csrfToken']) && strcmp($_POST['csrfToken'], CSRFToken()) !== 
         'color' => $color
     );
 
-    // check if successful
-    // redirect
-    // else give notice that there was a db error
-    createUser($newUser);
-}j
+    $result = createUser($newUser);
+
+    if ($result['success'] !== false) {
+        $_SESSION['message'] = $result['message'];
+        setcookie('color', $result['color'], 0, '/', 'localhost', false, false);
+        redirect($_SERVER['HTTP_REFERER']);
+    } else {
+        $_SESSION['message'] = $result['message'];
+        setSessionVars($_POST);
+        redirect($_SERVER['HTTP_REFERER']);
+    }
+}

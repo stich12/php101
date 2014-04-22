@@ -1,11 +1,11 @@
-<?php defined(BASEPATH) || exit('No direct script access allowed');
+<?php defined('BASEPATH') || exit('No direct script access allowed');
 
 // updating and deleting users/posts will be a homework exercise for the students
 
 function getDBConnection()
 {
     try {
-        return new PDO('mysql:dbname=php101;host=127.0.0.1', 'root', 'root');
+        return new PDO('mysql:dbname=php101;host=localhost', 'root', 'root');
     } catch(PDOException $e) {
         return $e->getMessage();
     }
@@ -16,22 +16,25 @@ function createUser($user)
     $db = getDBConnection();
 
     if ($db instanceof PDO) {
-        $sth = $db->prepare('INSERT INTO \'Users\' VALUES (:username, :password, :color)');
-        $sth->execute(array(
-            ':username' => $db->quote($user['username']),
-            ':password' => $db->quote($user['password']),
-            ':color' => $db->quote($user['color'])
+        $sth = $db->prepare('INSERT INTO Users (username, password, color) VALUES (:username, :password, :color)');
+        $result = $sth->execute(array(
+            ':username' => $user['username'],
+            ':password' => $user['password'],
+            ':color' => $user['color']
         ));
 
-        $result = $sth->fetchAll(PDO::FETCH_ASSOC);
-
-        if ($result !== false) {
+        if ($result === true) {
+            $user['success'] = true;
             return $user;
         } else {
-            // return that there was an error
+            $user['success'] = false;
+            $user['message'] = 'There was a problem performing the query';
+            return $user;
         }
     } else {
-        // return that there was an error
+        $user['success'] = false;
+        $user['message'] = 'There was a problem connecting to the database';
+        return $user;
     }
 }
 

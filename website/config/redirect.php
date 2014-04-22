@@ -1,5 +1,4 @@
-<?php
-require_once 'security.php';
+<?php defined('BASEPATH') || exit('No direct script access allowed');
 
 function redirect($url)
 {
