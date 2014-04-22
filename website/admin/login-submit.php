@@ -11,7 +11,13 @@ if (!isset($_POST['csrfToken']) && strcmp($_POST['csrfToken'], CSRFToken()) !== 
     $password = filter_var($_POST['username'], FILTER_SANITIZE_STRING);
 
     $user = getUser($username);
-    // check password
-    // if invalid redirect
-    // else logged in
+
+    $savedPassword = substr($username['password'], 32, strlen($username['password']));
+
+    if (strcmp($savedPassword, getPasswordHash($password))) {
+        // set cookie
+    } else {
+        setSessionVars($_POST);
+        redirect($_SERVER['HTTP_REFERER']);
+    }
 }

@@ -151,7 +151,16 @@ function getRecentPosts()
         $result = $sth->fetchAll(PDO::FETCH_ASSOC);
 
         if ($result !== false) {
-            return $result;
+
+            $data = array();
+
+            foreach ($result as $post) {
+                array_push($data, $post);
+
+                $data['excerpt'] = substr($post['content'], 0, 20);
+            }
+
+            return $data;
         } else {
             // return that there was an error
         }

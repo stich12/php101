@@ -15,5 +15,14 @@ if (!isset($_POST['csrfToken']) && strcmp($_POST['csrfToken'], CSRFToken()) !== 
     $password = filter_var($password, FILTER_SANITIZE_STRING);
     $color = filter_var($color, FILTER_SANITIZE_STRING);
 
-    // function to save user to database
+    $newUser = array(
+        'username' => $username,
+        'password' => hashPassword($password),
+        'color' => $color
+    );
+
+    // check if successful
+    // redirect
+    // else give notice that there was a db error
+    createUser($newUser);
 }
