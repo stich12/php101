@@ -22,7 +22,7 @@ function inputCSRF()
 
 function hashPassword($password)
 {
-    $salt = substr(base64_encode(microtime()), 0, 32);
+    $salt = substr(base64_encode(microtime()), 0, 28);
     return $salt . getPasswordHash($password);
 }
 

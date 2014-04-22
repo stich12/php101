@@ -6,7 +6,7 @@ function getDBConnection()
 {
     try {
         return new PDO('mysql:dbname=php101;host=localhost', 'root', 'root');
-    } catch(PDOException $e) {
+    } catch (PDOException $e) {
         return $e->getMessage();
     }
 }
@@ -45,12 +45,12 @@ function getUser($username)
     if ($db instanceof PDO) {
         $sth = $db->prepare('SELECT * FROM Users WHERE username = :username');
         $sth->execute(array(
-            ':username' => $db->quote($username)
+            ':username' => $username
         ));
 
         $result = $sth->fetchAll(PDO::FETCH_ASSOC);
 
-        if ($result !== false) {
+        if (!empty($result)) {
             $result['success'] = true;
             return $result;
         } else {

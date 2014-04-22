@@ -51,6 +51,10 @@
             <p>Welcome back, your favorite color is <?= $_COOKIE['color']; ?></p>
         <?php endif; ?>
 
+        <?php if (isset($_SESSION['user'])) : ?>
+            <p>Welcome back <?= $_SESSION['user']; ?></p>
+        <?php endif; ?>
+
     </div>
 
 </aside>

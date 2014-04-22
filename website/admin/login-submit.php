@@ -1,5 +1,5 @@
-<?php defined('BASEPATH') || exit('No direct script access allowed');
-
+<?php
+require_once '../config/access.php';
 require_once '../config/security.php';
 require_once '../config/database.php';
 
@@ -8,14 +8,15 @@ if (!isset($_POST['csrfToken']) && strcmp($_POST['csrfToken'], CSRFToken()) !== 
     redirect($_SERVER['HTTP_REFERER']);
 } else {
     $username = filter_var($_POST['username'], FILTER_SANITIZE_STRING);
-    $password = filter_var($_POST['username'], FILTER_SANITIZE_STRING);
+    $password = filter_var($_POST['password'], FILTER_SANITIZE_STRING);
 
     $user = getUser($username);
 
-    $savedPassword = substr($username['password'], 32, strlen($username['password']));
+    $savedPassword = substr($user[0]['password'], 28);
 
-    if (strcmp($savedPassword, getPasswordHash($password))) {
-        // set cookie
+    if (strcmp($savedPassword, getPasswordHash($password)) === 0) {
+        $_SESSION['user'] = $user[0]['username'];
+        redirect($_SERVER['HTTP_REFERER']);
     } else {
         setSessionVars($_POST);
         redirect($_SERVER['HTTP_REFERER']);
