@@ -14,7 +14,7 @@
       <input type="password" name="password" value="" />
     </p>
 
-    <button type="submit">Register</button>
+    <button type="submit">Login</button>
 
     <?= inputCSRF(); ?>
 
