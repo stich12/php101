@@ -1,5 +1,10 @@
 <?php //defined('BASEPATH') || exit('No direct script access allowed');
 
+echo '<pre>';
+var_dump($_POST);
+echo '</pre>';
+exit;
+
 require_once '../config/access.php';
 require_once '../config/security.php';
 require_once '../config/database.php';
@@ -8,11 +13,6 @@ if (!isset($_POST['csrfToken']) && strcmp($_POST['csrfToken'], CSRFToken()) !== 
     setSessionVars($_POST);
     redirect($_SERVER['HTTP_REFERER']);
 } else {
-
-    echo '<pre>';
-    var_dump($_POST);
-    echo '</pre>';
-    exit;
 
     $username = $_POST['username'];
     $password = $_POST['password'];
@@ -32,4 +32,4 @@ if (!isset($_POST['csrfToken']) && strcmp($_POST['csrfToken'], CSRFToken()) !== 
     // redirect
     // else give notice that there was a db error
     createUser($newUser);
-}
+}j
