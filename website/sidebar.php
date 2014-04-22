@@ -1,47 +1,52 @@
 <aside id="sidebar">
 
-  <div id="timeofday">
+    <div id="timeofday">
 
-    <?php
-    $date = getdate();
-    $day = '';
+        <?php
+        $date = getdate();
+        $day = '';
 
-    switch ($date['wday']) {
-      case 0:
-        $day = 'Sunday';
-        break;
-      case 1:
-        $day = 'Monday';
-        break;
-      case 2:
-        $day = 'Tuesday';
-        break;
-      case 3:
-        $day = 'Wednesday';
-        break;
-      case 4:
-        $day = 'Thursday';
-        break;
-      case 5:
-        $day = 'Friday';
-        break;
-      case 6:
-        $day = 'Saturday';
-        break;
-      default:
-        break;
-    }
+        switch ($date['wday']) {
+            case 0:
+                $day = 'Sunday';
+                break;
+            case 1:
+                $day = 'Monday';
+                break;
+            case 2:
+                $day = 'Tuesday';
+                break;
+            case 3:
+                $day = 'Wednesday';
+                break;
+            case 4:
+                $day = 'Thursday';
+                break;
+            case 5:
+                $day = 'Friday';
+                break;
+            case 6:
+                $day = 'Saturday';
+                break;
+            default:
+                break;
+        }
 
-    if ($date['hours'] >= 12) {
+        if ($date['hours'] >= 16) {
 
-      echo '<p>Good evening! Today is ' . $day . '</p>';
+            echo '<p>Good evening! Today is ' . $day . '</p>';
 
-    } else { ?>
+        } else if ($date['hours'] >= 12) {
+            ?>
 
-      <p>Good morning! Today is <?= $day; ?></p>
+            <p>Good afternoon! Today is <?= $day; ?></p>
 
-    <?php } ?>
+        <?php } else { ?>
 
-  </div>
+            <p>Good morning! Today is <?= $day; ?></p>
+
+        <?php } ?>
+
+    </div>
 
 </aside>
