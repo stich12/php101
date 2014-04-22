@@ -43,7 +43,7 @@ function getUser($username)
     $db = getDBConnection();
 
     if ($db instanceof PDO) {
-        $sth = $db->prepare('SELECT * FROM \'Users\' WHERE username = :username');
+        $sth = $db->prepare('SELECT * FROM Users WHERE username = :username');
         $sth->execute(array(
             ':username' => $db->quote($username)
         ));
@@ -51,12 +51,17 @@ function getUser($username)
         $result = $sth->fetchAll(PDO::FETCH_ASSOC);
 
         if ($result !== false) {
+            $result['success'] = true;
             return $result;
         } else {
-            // return that there was an error
+            $result['success'] = false;
+            $result['message'] = 'There was a problem performing the query';
+            return $result;
         }
     } else {
-        // return that there was an error
+        $result['success'] = false;
+        $result['message'] = 'There was a problem connecting to the database';
+        return $result;
     }
 }
 
@@ -65,17 +70,22 @@ function getAllUsers()
     $db = getDBConnection();
 
     if ($db instanceof PDO) {
-        $sth = $db->prepare('SELECT * FROM \'Users\'');
+        $sth = $db->prepare('SELECT * FROM Users');
         $sth->execute();
         $result = $sth->fetchAll(PDO::FETCH_ASSOC);
 
         if ($result !== false) {
+            $result['success'] = true;
             return $result;
         } else {
-            // return that there was an error
+            $result['success'] = false;
+            $result['message'] = 'There was a problem performing the query';
+            return $result;
         }
     } else {
-        // return that there was an error
+        $result['success'] = false;
+        $result['message'] = 'There was a problem connecting to the database';
+        return $result;
     }
 }
 
@@ -84,22 +94,25 @@ function createPost($post)
     $db = getDBConnection();
 
     if ($db instanceof PDO) {
-        $sth = $db->prepare('INSERT INTO \'Posts\' VALUES (:title, :datetime, :content)');
-        $sth->execute(array(
-            ':title' => $db->quote($post['title']),
-            ':datetime' => $db->quote($post['datetime']),
-            ':content' => $db->quote($post['content'])
+        $sth = $db->prepare('INSERT INTO Posts (Title, Datetime, Content) VALUES (:title, :datetime, :content)');
+        $result = $sth->execute(array(
+            ':title' => $post['title'],
+            ':datetime' => $post['datetime'],
+            ':content' => $post['content']
         ));
 
-        $result = $sth->fetchAll(PDO::FETCH_ASSOC);
-
-        if ($result !== false) {
-            return $result;
+        if ($result === true) {
+            $post['success'] = true;
+            return $post;
         } else {
-            // return that there was an error
+            $post['success'] = false;
+            $post['message'] = 'There was a problem performing the query';
+            return $post;
         }
     } else {
-        // return that there was an error
+        $post['success'] = false;
+        $post['message'] = 'There was a problem connecting to the database';
+        return $post;
     }
 }
 
@@ -108,20 +121,25 @@ function getPost($id)
     $db = getDBConnection();
 
     if ($db instanceof PDO) {
-        $sth = $db->prepare('SELECT * FROM \'Posts\' WHERE ID = \':id\'');
+        $sth = $db->prepare('SELECT * FROM Posts WHERE ID = :id');
         $sth->execute(array(
-            ':id' => $db->quote($id)
+            ':id' => (int)$id
         ));
 
         $result = $sth->fetchAll(PDO::FETCH_ASSOC);
 
         if ($result !== false) {
+            $result['success'] = true;
             return $result;
         } else {
-            // return that there was an error
+            $result['success'] = false;
+            $result['message'] = 'There was a problem performing the query';
+            return $result;
         }
     } else {
-        // return that there was an error
+        $result['success'] = false;
+        $result['message'] = 'There was a problem connecting to the database';
+        return $result;
     }
 }
 
@@ -130,17 +148,22 @@ function getAllPosts()
     $db = getDBConnection();
 
     if ($db instanceof PDO) {
-        $sth = $db->prepare('SELECT * FROM \'Posts\'');
+        $sth = $db->prepare('SELECT * FROM Posts');
         $sth->execute();
         $result = $sth->fetchAll(PDO::FETCH_ASSOC);
 
         if ($result !== false) {
+            $result['success'] = true;
             return $result;
         } else {
-            // return that there was an error
+            $result['success'] = false;
+            $result['message'] = 'There was a problem performing the query';
+            return $result;
         }
     } else {
-        // return that there was an error
+        $result['success'] = false;
+        $result['message'] = 'There was a problem connecting to the database';
+        return $result;
     }
 }
 
@@ -149,25 +172,21 @@ function getRecentPosts()
     $db = getDBConnection();
 
     if ($db instanceof PDO) {
-        $sth = $db->prepare('SELECT * FROM \'Posts\' LIMIT 5');
+        $sth = $db->prepare('SELECT * FROM Posts LIMIT 5');
         $sth->execute();
         $result = $sth->fetchAll(PDO::FETCH_ASSOC);
 
         if ($result !== false) {
-
-            $data = array();
-
-            foreach ($result as $post) {
-                array_push($data, $post);
-
-                $data['excerpt'] = substr($post['content'], 0, 20);
-            }
-
-            return $data;
+            $result['success'] = true;
+            return $result;
         } else {
-            // return that there was an error
+            $result['success'] = false;
+            $result['message'] = 'There was a problem performing the query';
+            return $result;
         }
     } else {
-        // return that there was an error
+        $result['success'] = false;
+        $result['message'] = 'There was a problem connecting to the database';
+        return $result;
     }
 }
