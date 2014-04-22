@@ -16,7 +16,7 @@ require_once 'admin-header.php';
                       cols="30"
                       rows="10"><?= isset($_SESSION['content']) ? $_SESSION['content'] : null; ?></textarea>
         </p>
-g 
+
         <button type="submit">Save Post</button>
 
     </form>
