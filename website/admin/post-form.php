@@ -11,12 +11,14 @@ require_once 'admin-header.php';
 
         <p>
             <label for="content">Content</label>
-            <textarea name="content"
-                      id="content"
-                      cols="30"
-                      rows="10"><?= isset($_SESSION['content']) ? $_SESSION['content'] : null; ?></textarea>
+            <textarea
+                name="content"
+                id="content"
+                cols="30"
+                rows="10"><?= isset($_SESSION['content']) ? $_SESSION['content'] : null; ?></textarea>
         </p>
 
+        <input type="hidden" name="datetime" value="<?= date('Y-m-d H:mm:ss'); ?>" />
         <button type="submit">Save Post</button>
 
     </form>
