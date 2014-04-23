@@ -1,7 +1,8 @@
 <?php
-require '../config/access.php';
-require '../config/security.php';
-require '../config/redirect.php';
+require_once '../config/access.php';
+require_once '../config/security.php';
+require_once '../config/sessions.php';
+require_once '../config/helper-functions.php';
 
 if (!isset($_POST['csrfToken']) && strcmp($_POST['csrfToken'], CSRFToken()) !== 0) {
     setSessionVars($_POST);
@@ -26,7 +27,7 @@ if (!isset($_POST['csrfToken']) && strcmp($_POST['csrfToken'], CSRFToken()) !== 
 
         if ($result === true) {
             unsetSessionVars($_POST);
-            $_SESSION['response'] = 'Message sent';
+            setFlashMessage('Message sent');
             redirect($_SERVER['HTTP_REFERER']);
         } else {
             redirect($_SERVER['HTTP_REFERER']);
