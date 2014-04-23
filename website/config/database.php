@@ -176,7 +176,7 @@ function getRecentPosts()
         $sth->execute();
         $result = $sth->fetchAll(PDO::FETCH_ASSOC);
 
-        if ($result !== false) {
+        if (!empty($result)) {
             $result['success'] = true;
             return $result;
         } else {

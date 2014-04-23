@@ -6,6 +6,6 @@ require_once '../config/security.php';
 <html>
 <head>
     <title>Admin My PHP Website!</title>
-    <link rel="stylesheet" href="admin.css" />
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
 </head>
 <body>

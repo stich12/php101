@@ -4,6 +4,15 @@ if (!session_id()) {
     session_start();
 }
 
+function endSession()
+{
+    foreach ($_COOKIE as $key => $value) {
+        setcookie($key, $value, time() - 3600, '/');
+    }
+
+    session_destroy();
+}
+
 function setCSRFToken()
 {
     $_SESSION['csrfToken'] = md5(uniqid(mt_rand(), true));
