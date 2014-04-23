@@ -2,6 +2,7 @@
 require_once '../config/access.php';
 require_once '../config/security.php';
 require_once '../config/database.php';
+require_once '../config/redirect.php';
 
 if (!isset($_POST['csrfToken']) && strcmp($_POST['csrfToken'], CSRFToken()) !== 0) {
     setSessionVars($_POST);
@@ -11,7 +12,6 @@ if (!isset($_POST['csrfToken']) && strcmp($_POST['csrfToken'], CSRFToken()) !== 
     $password = filter_var($_POST['password'], FILTER_SANITIZE_STRING);
 
     $user = getUser($username);
-
     $savedPassword = substr($user[0]['password'], 28);
 
     if (strcmp($savedPassword, getPasswordHash($password)) === 0) {
