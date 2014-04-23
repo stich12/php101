@@ -3,6 +3,8 @@
     <div id="timeofday">
 
         <?php
+        ini_set('date.timezone', 'America/New_York');
+
         $date = getdate();
         $day = '';
 

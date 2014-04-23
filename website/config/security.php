@@ -6,10 +6,6 @@ if (!session_id()) {
 
 function endSession()
 {
-    foreach ($_COOKIE as $key => $value) {
-        setcookie($key, $value, time() - 3600, '/');
-    }
-
     session_destroy();
 }
 
