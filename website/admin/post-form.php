@@ -18,8 +18,9 @@ require_once 'admin-header.php';
                 rows="10"><?= isset($_SESSION['content']) ? $_SESSION['content'] : null; ?></textarea>
         </p>
 
-        <input type="hidden" name="datetime" value="<?= date('Y-m-d H:mm:ss'); ?>" />
         <button type="submit">Save Post</button>
+
+        <?= inputCSRF(); ?>
 
     </form>
 
