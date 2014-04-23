@@ -16,6 +16,7 @@ if (!isset($_POST['csrfToken']) && strcmp($_POST['csrfToken'], CSRFToken()) !== 
     $savedPassword = substr($user[0]['password'], 28);
 
     if (strcmp($savedPassword, getPasswordHash($password)) === 0) {
+        unsetSessionVars($_POST);
         $_SESSION['user'] = $user[0]['username'];
         redirect($_SERVER['HTTP_REFERER']);
     } else {

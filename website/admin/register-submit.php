@@ -26,12 +26,13 @@ if (!isset($_POST['csrfToken']) && strcmp($_POST['csrfToken'], CSRFToken()) !== 
     $result = createUser($newUser);
 
     if ($result['success'] !== false) {
-        $_SESSION['message'] = $result['message'];
         setcookie('color', $result['color'], 0, '/');
+        unsetSessionVars($_POST);
+        setFlashMessage($result['message']);
         redirect($_SERVER['HTTP_REFERER']);
     } else {
-        $_SESSION['message'] = $result['message'];
         setSessionVars($_POST);
+        setFlashMessage($result['message']);
         redirect($_SERVER['HTTP_REFERER']);
     }
 }

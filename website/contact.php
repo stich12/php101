@@ -4,11 +4,6 @@
 
     <section id="page">
 
-        <?php if (hasFlashMessage()) : ?>
-            <p><?php getFlashMessage(); ?></p>
-        <?php endif; ?>
-
-
         <form method="post" action="admin/contact-submit.php">
             <p>
                 <label for="email">Email</label>

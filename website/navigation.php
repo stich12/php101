@@ -18,3 +18,7 @@
         <li><a href="register.php">Register</a></li>
     </ul>
 </nav>
+
+<?php if (hasFlashMessage()) : ?>
+    <p><?php getFlashMessage(); ?></p>
+<?php endif; ?>

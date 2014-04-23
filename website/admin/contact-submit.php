@@ -30,6 +30,7 @@ if (!isset($_POST['csrfToken']) && strcmp($_POST['csrfToken'], CSRFToken()) !== 
             setFlashMessage('Message sent');
             redirect($_SERVER['HTTP_REFERER']);
         } else {
+            setFlashMessage('There was a problem sending the email');
             redirect($_SERVER['HTTP_REFERER']);
         }
     }
