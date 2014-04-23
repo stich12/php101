@@ -11,3 +11,12 @@ function setSessionVars($postArray)
     $_SESSION[$key] = $value;
   }
 }
+
+function unsetSessionVars($postArray)
+{
+    foreach ($postArray as $key => $value) {
+        if (array_key_exists($key, $_SESSION)) {
+            unset($_SESSION[$key]);
+        }
+    }
+}

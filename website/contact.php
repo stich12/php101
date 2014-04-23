@@ -4,6 +4,14 @@
 
     <section id="page">
 
+        <?php if (isset($_SESSION['response'])) : ?>
+            <p><?php
+                echo $_SESSION['response'];
+                unset($_SESSION['response']);
+            ?></p>
+        <?php endif; ?>
+
+
         <form method="post" action="admin/contact-submit.php">
             <p>
                 <label for="email">Email</label>
@@ -20,6 +28,10 @@
                 <textarea name="message" id="message" cols="30"
                           rows="10"><?= isset($_SESSION['message']) ? $_SESSION['message'] : null; ?></textarea>
             </p>
+
+            <button type="submit">Send</button>
+
+            <?= inputCSRF(); ?>
 
         </form>
 

@@ -1,6 +1,7 @@
-<?php defined('BASEPATH') || exit('No direct script access allowed');
-
+<?php
+require '../config/access.php';
 require '../config/security.php';
+require '../config/redirect.php';
 
 if (!isset($_POST['csrfToken']) && strcmp($_POST['csrfToken'], CSRFToken()) !== 0) {
     setSessionVars($_POST);
@@ -21,6 +22,14 @@ if (!isset($_POST['csrfToken']) && strcmp($_POST['csrfToken'], CSRFToken()) !== 
         $message = filter_var($message, FILTER_SANITIZE_STRING);
 
 
-        mail('81dublin@gmail.com', $name . '<' . $email . '>', $message);
+        $result = mail('81dublin@gmail.com', $name . '<' . $email . '>', $message);
+
+        if ($result === true) {
+            unsetSessionVars($_POST);
+            $_SESSION['response'] = 'Message sent';
+            redirect($_SERVER['HTTP_REFERER']);
+        } else {
+            redirect($_SERVER['HTTP_REFERER']);
+        }
     }
 }
