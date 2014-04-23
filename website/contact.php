@@ -4,11 +4,8 @@
 
     <section id="page">
 
-        <?php if (isset($_SESSION['response'])) : ?>
-            <p><?php
-                echo $_SESSION['response'];
-                unset($_SESSION['response']);
-            ?></p>
+        <?php if (hasFlashMessage()) : ?>
+            <p><?php getFlashMessage(); ?></p>
         <?php endif; ?>
 
 

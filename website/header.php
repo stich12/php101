@@ -1,6 +1,7 @@
 <?php
 require_once 'config/access.php';
 require_once 'config/security.php';
+require_once 'config/sessions.php';
 require_once 'config/database.php';
 require_once 'config/helper-functions.php';
 ?>
