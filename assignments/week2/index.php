@@ -8,7 +8,9 @@
 		/** @var string **/
 		var $title;
 
-
+		public function getShortTitle() {
+			return $this->title;
+		}
 	}
 
 	$blog1 = new Blog();
