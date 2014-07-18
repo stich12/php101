@@ -1,13 +1,13 @@
 <?php
 
 	// Require all the files in the ./inc directory
-	$files = glob('../inc/*.php');
+	$files = glob('./inc/*.php');
 	foreach ($files as $file) {
 		require_once $file;
 	}
 
-	require_once '../vendor/autoload.php';
-	require_once '../db.php';
+	require_once './vendor/autoload.php';
+	require_once './db.php';
 
 	// Load up the twig environment
 	$loader	= new Twig_Loader_Filesystem('../templates');
