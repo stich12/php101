@@ -1,0 +1,25 @@
+{% include 'header.html' %}
+
+
+<h1 style="color: white; background: red; padding: 10px;">ADMIN</h1>
+
+<hr>
+
+<h3>New Blog</h3>
+<form action="/new_blog.php" method="POST">
+	Title: <input type="text" name="title">
+	<br><br>
+	<button type="submit">Add new blog</button>
+</form>
+
+<Hr>
+
+
+{% for key,blog in blogs %}
+	<h3><a href="/blog.php?id={{ key }}">{{ blog.title }}</a></h3>
+	{{ blog.body }}
+
+	<hr>
+{% endfor %}
+
+{% include 'footer.html' %}
