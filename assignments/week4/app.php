@@ -10,7 +10,7 @@
 	require_once './db.php';
 
 	// Load up the twig environment
-	$loader	= new Twig_Loader_Filesystem('../templates');
+	$loader	= new Twig_Loader_Filesystem('./templates');
 	$twig	= new Twig_Environment($loader);
 
 	// Give us an instance of a database that we can use later
