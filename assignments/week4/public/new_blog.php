@@ -5,6 +5,6 @@
 	$blog = new Blog();
 	$blog->title = $_POST['title'];
 
-	$db->addBlog($blog);
+	$db->saveBlog($blog);
 
 	header('Location: /admin.php');
