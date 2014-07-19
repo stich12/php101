@@ -14,17 +14,20 @@
 	 */
 	class CCDatabase {
 
-		public function __construct($shouldBootstrap = false) {
+		public function __construct() {
 			$this->init();
 
-			if ($shouldBootstrap) {
+			// Check for the existence of at least one blog.
+			// Saves us from manually setting true or false for the now-defunct $shouldBootstrap parameter.
+
+			if (mysql_fetch_assoc(mysql_query('SELECT 1 FROM `php101`.`blogs`')) === false) {
 				$this->bootstrap();
 			}
 		}
 
 		private function init() {
 			// Connect to the database
-			if (!mysql_connect(':/tmp/mysql.sock', 'root', 'root')) {
+			if (!mysql_connect(':/tmp/mysql.sock', 'root', '')) {
 				die('Error connecting to the database');
 			}
 
