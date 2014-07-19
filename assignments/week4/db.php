@@ -113,7 +113,7 @@
 
 		public static function getBlog($blogID = 0) {
 			$return = array ();
-			$result	= mysql_query(sprintf("SELECT * FROM `php101`.`blogs` WHERE `blogID` = %d DESC", $blogID));
+			$result	= mysql_query(sprintf("SELECT * FROM `php101`.`blogs` WHERE `blogID` = %d", $blogID));
 
 			while($row = mysql_fetch_array($result)) {
 				$blog = new Blog();

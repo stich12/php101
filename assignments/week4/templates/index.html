@@ -4,8 +4,8 @@
 
 <p>Welcome to my blog!</p>
 
-{% for key,blog in blogs %}
-	<h3><a href="/blog.php?id={{ key }}">{{ blog.title }}</a></h3>
+{% for blog in blogs %}
+	<h3><a href="/blog.php?id={{ blog.id }}">{{ blog.title }}</a></h3>
 	{{ blog.body }}
 
 	<hr>
