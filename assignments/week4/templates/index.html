@@ -1,9 +1,5 @@
 {% include 'header.html' %}
 
-<h1>My Awesome Blog</h1>
-
-<p>Welcome to my blog!</p>
-
 {% for blog in blogs %}
 	<h3><a href="/blog.php?id={{ blog.id }}">{{ blog.title }}</a></h3>
 	{{ blog.body }}

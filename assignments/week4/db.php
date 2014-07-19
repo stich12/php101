@@ -96,16 +96,10 @@
 		 */
 		public static function getBlogs() {
 			$return = array ();
-			$result	= mysql_query("SELECT * FROM `php101`.`blogs` ORDER BY `blogID` DESC");
+			$result	= mysql_query("SELECT blogID FROM `php101`.`blogs` ORDER BY `blogID` DESC");
 
 			while($row = mysql_fetch_array($result)) {
-				$blog = new Blog();
-
-				$blog->id			= $row['blogID'];
-				$blog->title		= $row['blogTitle'];
-				$blog->body			= $row['blogBody'];
-
-				$return[] = $blog;
+				$return[] = self::getBlog($row['blogID']);
 			}
 
 			return $return;
@@ -121,6 +115,7 @@
 				$blog->id			= $row['blogID'];
 				$blog->title		= $row['blogTitle'];
 				$blog->body			= $row['blogBody'];
+				$blog->comments		= self::getComments($blog->id);
 
 				return $blog;
 			}
