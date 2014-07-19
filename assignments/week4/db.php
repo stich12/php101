@@ -133,6 +133,7 @@
 
 				$comment->id		= $row['commentID'];
 				$comment->blog_id	= $row['blogID'];
+				$comment->body		= $row['commentBody'];
 
 				$return[] = $comment;
 			}
