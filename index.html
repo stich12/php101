@@ -1,172 +1,351 @@
-<!DOCTYPE html>
-<html>
-
+<!doctype html>
+<html class="no-js" lang="en">
   <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="img/favicon.ico">
     
-    <meta charset='utf-8' />
-    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
-    <meta name="description" content="codecamp, charleston digital corridor" />
-    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
-    <title>CODEcamp - PHP 101</title>
-
-    <!--*****/////  Stylesheets  /////*****-->
-    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/reset.css">      
-    <link rel="stylesheet" media="screen" href="stylesheets/deck/extensions/deck.goto.css">
-    <link rel="stylesheet" media="screen" href="stylesheets/deck/extensions/deck.menu.css">
-    <link rel="stylesheet" media="screen" href="stylesheets/deck/extensions/deck.navigation.css">
-    <link rel="stylesheet" media="screen" href="stylesheets/deck/extensions/deck.status.css">
-    <link rel="stylesheet" media="screen" href="stylesheets/deck/extensions/deck.scale.css">
-    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
-
+    <title>Web Basics 101- CODEcamp</title>
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="css/foundation.css" />
+    <link rel="stylesheet" href="css/styles.css" />
+    <script src="js/vendor/modernizr.js"></script>
   </head>
-
   <body>
-    
-    <header class="index_header">
-      
-      <div class="index_header_wrapper">
-        
-        <ul class="header_left_nav">
-          <li class="active_link"><a href="index.html">Home</a></li>
-          <li><a href="assignments.html">Assignments</a></li>
-        </ul>
-        
-        <ul class="header_right_nav">
-          <li><a href="screencasts.html">Screencasts</a></li>          
-          <li><a href="references.html">Resources</a></li>
-        </ul>
-    
-        <a href="index.html">
-          <img class="index_logo" src="images/logo.png" /> 
-        </a>
-      
-      </div>
-      
-    </header>
-    
-    <!--*****/////  Index Content /////*****-->
-    
-    <section class="index_content">
-      
-      <h2 class="course_title">PHP 101</h2>
-      
-      
-      <!--*****/////  Class 1  /////*****-->
-      
-      <div class="index_left_content">
-        
-        <h2 class="content_title">Class 1</h2>
-        <hr>
-        <p class = "content_text">
-        In week 1 you'll learn explore what PHP is and how it works. We'll look at basic syntax and computer programming concepts.
-        </p>
-        <p class = "content_text">
-        <strong> Topics Covered </strong>
-        </p>  
-        <ul class ="bottom_list">
-          <li class = "bottom_list_1"> Introductions</li>
-        	<li class = "bottom_list_1"> Why PHP?</li>
-          <li class = "bottom_list_1"> How does PHP read my code?</li>
-        	<li class = "bottom_list_1"> Variables and assignments</li>
-          <li class = "bottom_list_1"> Values and Types</li>
-        	<li class = "bottom_list_1"> Control flow</li>
-          <li class = "bottom_list_1"> Functions</li>
-          <li class = "bottom_list_1"> Quick tips on composition</li>
-          <li class = "bottom_list_1"> Q&amp;A session</li>
-        </ul>
-      </div>
-      
-      <!--*****/////  Class 2  /////*****-->
-      
-      <div class="index_right_content">
-        
-        <h2 class="content_title">Class 2</h2>
-        <hr>
-        <p class = "content_text">
-        In week 2 we'll explore the universal language of the web, HTTP, and learn how it can make our PHP applications more powerful.
-        </p>
-        <p class = "content_text">
-        <strong> Topics Covered </strong>
-        </p>  
-        <ul class ="bottom_list">
-        	<li class = "bottom_list_1"> Week 1 recap: more on functions</li>
-          <li class = "bottom_list_1"> Including files</li>
-        	<li class = "bottom_list_1"> Introduction to HTTP and request-response</li>
-        	<li class = "bottom_list_1"> Using the built-in PHP server</li>
-        	<li class = "bottom_list_1"> Exploring superglobals</li>
-        	<li class = "bottom_list_1"> Introduction to Twig through Composer - separating data from presentation</li>
-          <li class = "bottom_list_1"> Q&amp;A session</li>
-        </ul>
-           
-      </div>
-      
-      <!--*****/////  Class 3  /////*****-->
-      
-      <div class="index_left_content">
-        
-        <h2 class="content_title">Class 3</h2>
-        <hr>
-        <p class = "content_text">
-        In week 3 we'll explore classes and objects, and how we can use them to better structure our data.
-        </p>
-        <p class = "content_text">
-        <strong> Topics Covered </strong>
-        </p>  
-        <ul class ="bottom_list">
-        	<li class = "bottom_list_1"> Recap of week 2: HTTP in depth</li>
-        	<li class = "bottom_list_1"> HTML forms: from client to server and back again</li>
-        	<li class = "bottom_list_1"> Understanding sessions</li>
-          <li class = "bottom_list_1"> Form security and CSRF tokens</li>
-          <li class = "bottom_list_1"> Response codes and 404 Not Found</li>
-          <li class = "bottom_list_1"> Redirection</li>
-          <li class = "bottom_list_1"> Classes and instances of classes</li>
-          <li class = "bottom_list_1"> Q&amp;A session</li>
-        </ul>
-      </div>
-      
-      <!--*****/////  Class 4  /////*****-->
-      
-      <div class="index_right_content">
-        
-        <h2 class="content_title">Class 4</h2>
-        <hr>
-        <p class = "content_text">
-        In week 4 we'll pull everything together and bring structure to our blog app.
-        </p>
-        <p class = "content_text">
-        <strong> Topics Covered </strong>
-        </p>  
-        <ul class ="bottom_list">
-          <li class = "bottom_list_1"> Imposing structure on your growing code</li>
-          <li class = "bottom_list_1"> Twig includes to simplify code</li>
-        	<li class = "bottom_list_1"> Using the document root to help secure applications</li>
-          <li class = "bottom_list_1"> Routing concepts</li>
-          <li class = "bottom_list_1"> Log in, log out!</li>
-          <li class = "bottom_list_1"> Admin page: more form POSTS</li>
-          <li class = "bottom_list_1"> AJAX requests</li>
-          <li class = "bottom_list_1"> Q&amp;A session</li>
-        </ul>
-      </div>
-      
-      </section>
-    
-    <footer class="footer">
-      <div class="copyright">
-        <h3>Copyright &copy; 2014 Charleston Digital Corridor</h3>
-        <img class="cdc_logo" src="images/cdc_logo.png" />
-      </div>
-    </footer>
-    
-    <!--*****/////  Site Functionality  /////*****-->
-    <script src="javascripts/jquery-10.1.2.min.js"></script>
-    <script src="javascripts/modernizr.custom.js"></script>
-    <script src="javascripts/deck/deck.core.js"></script>
-    <script src="javascripts/deck/extensions/deck.menu.js"></script>
-    <script src="javascripts/deck/extensions/deck.goto.js"></script>
-    <script src="javascripts/deck/extensions/deck.status.js"></script>
-    <script src="javascripts/deck/extensions/deck.navigation.js"></script>
-    <script src="javascripts/deck/extensions/deck.scale.js"></script>
-    <script src="javascripts/site.js"></script>
+  	<div class = "page">
 
+	  	<div class="off-canvas-wrap" data-offcanvas>
+		  <div class="inner-wrap">
+
+		  	<nav class="full-nav hide-for-small">
+		  		<div class="row">
+		  			<div class="medium-5 columns">
+			  			<ul class = "navbar navbar-left"> 
+			  				<li><a href="index.html">Home</a></li> 
+			        		<li><a href="exercises.html">Exercises</a></li>
+			  			</ul>
+		  			</div>
+		  			<div class="medium-2 columns">
+			  			<div class = "logo-wrapper">
+			  				<a href="http://www.chscodecamp.com/"><img src = "img/logo.svg" class = "logo"></a> 
+			  			</div>
+		  			</div>
+		  			<div class="medium-5 columns">
+			  			<ul class = "navbar navbar-right"> 
+			  				<li><a href="screencasts.html">Screencasts</a></li>
+			        		<li><a href="resources.html">Resources</a></li>
+			  			</ul>
+		  			</div>
+		  		</div>
+		  	</nav>
+
+		    <nav class="tab-bar show-for-small">
+		      <section class="left-small">
+		        <a class="left-off-canvas-toggle menu-icon" href="#"><span></span></a>
+		      </section>
+
+		      <section class="middle tab-bar-section">
+		      	<div class = "img-wrapper"><img src="img/logo.svg" class="small-logo"></div>
+		        <h1 class="title">CODEcamp</h1>
+		      </section>
+
+		    </nav>
+
+		    <aside class="left-off-canvas-menu nav-height">
+		      <ul class="off-canvas-list">
+		        <li><label>Web Basics 101</label></li>
+		        <li><a href="index.html">Home</a></li> 
+		        <li><a href="exercises.html">Exercises</a></li>
+		        <li><a href="screencasts.html">Screencasts</a></li>
+		        <li><a href="resources.html">Resources</a></li>
+		        <li><label>CODEcamp</label></li>
+		        <li><a href="http://www.chscodecamp.com/">Main Website</a></li>
+		        <li><a href="http://www.chscodecamp.com/courses/web-basics-101-intro-web/">Class Listing</a></li>
+		      </ul>
+		    </aside>
+
+
+		    <section class="main-section">
+	  			<div class="page-title">
+	  				<div class="row">
+	  					<div class = "small-12 columns">
+	  						<h3> Web Basics 101 <small class = "secondary-heading"> Intro to the Web </small> </h3>
+	  					</div>
+	  				</div>
+	  			</div>
+	  			
+	  			<div class="row">
+	  				<!-- Class 1 -->
+	  				<div class="medium-6 columns">
+  					<div class="small-10 small-offset-1 medium-11 medium-offset-0 columns end class-box">
+  						<div class ="row">
+  							<div class = "small-12 columns">
+  								<h2 class = "class-title"> Class 1 
+  								<div class = "border-bottom"></div>
+  								</h2>
+		  						<dl class="accordion" data-accordion>
+		  							<dd class="accordion-navigation">
+		    							<a href="#panel1">Class Overview</a>
+		    							<div id="panel1" class="content">
+		  									Focus: General HTML
+		    							</div>
+								  	</dd>
+								  	
+								  	<dd class="accordion-navigation">
+									    <a href="#panel2">Key Topics</a>
+									    <div id="panel2" class="content">
+									      <ul class ="circle">
+									      	<li> What is HTML? </li>
+									      	<li> How is it read by the browser? </li>
+									      	<li> The DOM </li>
+									      	<li> Separation of Concerns 
+									      		<ul>
+									      			<li> Content = HTML </li>
+									      			<li> Presentation = CSS </li>
+									      			<li> Functionality = Javascript </li>
+									      		</ul>
+									      	</li>
+									      	<li> Key Components of an HTML Document
+									      		<ul>
+									      			<li> Doctype Declaration </li>
+									      			<li> html Encapsulation </li>
+									      			<li> Head Section </li>
+									      			<li> Body Section </li>
+									      		</ul>
+									      	</li>
+									      	<li> General HTML Syntax 
+									      		<ul>
+									      			<li> Opening/Closing Tags </li>
+									      			<li> Self-Closing Tags (e.g., img, input, link) </li>
+									      		</ul>
+									      	</li>
+									      	<li> Inline versus Block Elements </li>
+									      	<li> Intro to SublimeText and Chrome Web Tools </li>
+									      	<li> Importance of Indentation and Formatting</li>
+									      	<li> ID's and Classes: Importance of Semantics </li>
+									      	<li> Discussion of Elements versus Tags versus Attributes</li>
+									      </ul>
+									    </div>
+									</dd>
+									
+									<dd class="accordion-navigation">
+									    <a href="#panel3">Objectives</a>
+									    <div id="panel3" class="content">
+									      Students should...
+									      <ul class="square">
+									      	<li> Have a clear understanding of what HTML is and how it is interpreted by the browser. </li>
+									      	<li> Understand key components of the DOM. </li>
+									      	<li> Inspect the DOM hierarchy and view code source on any web page. </li>
+									      	<li> Understand the key differences between HTML, CSS, and JavaScript. </li>
+									      </ul>
+									    </div>
+									</dd>
+								</dl>
+							</div>
+						</div>
+  					</div>
+  					</div>
+  					<!-- Class 2 -->
+  					<div class="medium-6 columns">
+  					<div class="small-10 small-offset-1 medium-11 medium-offset-1 columns end class-box">
+  						<div class ="row">
+  							<div class = "small-12 columns">
+  								<h2 class = "class-title"> Class 2 
+  								<div class = "border-bottom"></div>
+  								</h2>
+		  						<dl class="accordion" data-accordion>
+		  							<dd class="accordion-navigation">
+		    							<a href="#panel4">Class Overview</a>
+		    							<div id="panel4" class="content">
+		  									Focus: Basics of CSS, Introduction to the Box Model
+		    							</div>
+								  	</dd>
+								  	
+								  	<dd class="accordion-navigation">
+									    <a href="#panel5">Key Topics</a>
+									    <div id="panel5" class="content">
+									      <ul class ="circle">
+									      	<li> Review of Last Class </li>
+									      	<li> What is CSS?
+									      		<ul>
+									      			<li> Inline Styles versus Inline Stylesheets versus External Stylesheets </li>
+									      		</ul>
+									      	</li>
+									      	<li> How to Create and Link to External Stylesheets </li>
+									      	<li> Basic CSS Selectors
+									      		<ul>
+									      			<li> How to Select Entire Elements (e.g., div, p, body, etc.) </li>
+									      			<li> Basic Syntax </li>
+									      			<li> How to Target Specific Elements </li>
+									      		</ul>
+									      	</li>
+									      	<li> The Box Model </li>
+									      	<li> Basic CSS Properties (color,background-color, font-style, etc.)</li>
+									      	<li> CSS Resets </li>
+									      </ul>
+									    </div>
+									</dd>
+									
+									<dd class="accordion-navigation">
+									    <a href="#panel6">Objectives</a>
+									    <div id="panel6" class="content">
+									      Students should...
+									      <ul class="square">
+									      	<li> Understand the basics of CSS selectors. </li>
+									      	<li> Understand the basics of the Box Model and how to calculate dimensions of HTML elements. </li>
+									      	<li> Understand the importance of CSS resets.</li>
+									      	<li> Understand differences between Classes and ID's.</li>
+									      </ul>
+									    </div>
+									</dd>
+								</dl>
+							</div>
+						</div>
+  					</div>
+  					</div>
+				</div>
+
+				<div class="row">
+					<div class ="medium-6 columns">
+					<!-- Class 3 -->
+  					<div class="small-10 small-offset-1 medium-11 medium-offset-0 columns end class-box">
+  						<div class ="row">
+  							<div class = "small-12 columns">
+  								<h2 class = "class-title"> Class 3 
+  								<div class = "border-bottom"></div>
+  								</h2>
+		  						<dl class="accordion" data-accordion>
+		  							<dd class="accordion-navigation">
+		    							<a href="#panel7">Class Overview</a>
+		    							<div id="panel7" class="content">
+		  									Focus: More CSS Properties, Beginning of a Basic Layout
+		    							</div>
+								  	</dd>
+								  	
+								  	<dd class="accordion-navigation">
+									    <a href="#panel8">Key Topics</a>
+									    <div id="panel8" class="content">
+									      <ul class ="circle">
+									      	<li> Review Box Model and Display Property </li>
+									      	<li> display: inline-block </li>
+									      	<li> Building a Header </li>
+									      	<li> Floats
+									      		<ul>
+									      			<li> Importance of When/Where To Use Floats, and When Not To Use Them </li>
+									      			<li> Discussion of How Content Flows Around Floated Elements </li>
+									      			<li> Clearing Floats </li>
+									      		</ul>
+									      	</li>
+									      	<li> Live In-Class Development of a Basic Layout</li>
+									      </ul>
+									    </div>
+									</dd>
+									
+									<dd class="accordion-navigation">
+									    <a href="#panel9">Objectives</a>
+									    <div id="panel9" class="content">
+									      Students should...
+									      <ul class="square">
+									      	<li> Have a thorough understanding of inline vs block level elements. </li>
+									      	<li> Understand the basics of floats and the caveats they present. </li>
+									      	<li> Understand the key concepts behind wrappers/container elements. </li>
+									      	<li> Understand the importance of formatting code and keeping it semantic for readability. </li>
+									      </ul>
+									    </div>
+									</dd>
+								</dl>
+							</div>
+						</div>
+  					</div>
+  					</div>
+
+  					<!-- Class 4 -->
+  					<div class="medium-6 columns">
+  					<div class="small-10 small-offset-1 medium-11 medium-offset-1 columns end class-box">
+  						<div class ="row">
+  							<div class = "small-12 columns">
+  								<h2 class = "class-title"> Class 4
+  								<div class = "border-bottom"></div>
+  								</h2>
+		  						<dl class="accordion" data-accordion>
+		  							<dd class="accordion-navigation">
+		    							<a href="#panel10">Class Overview</a>
+		    							<div id="panel10" class="content">
+		  									Focus: More CSS and HTML
+		    							</div>
+								  	</dd>
+								  	
+								  	<dd class="accordion-navigation">
+									    <a href="#panel11">Key Topics</a>
+									    <div id="panel11" class="content">
+									      <ul class ="circle">
+									      	<li> Higher-Level Discussion of "Wrappers" and "Containers" </li>
+									      	<li> IMG Tag and Linking to Local Images </li>
+									      	<li> More CSS Properties
+									      		<ul>
+									      			<li> background-image </li>
+									      			<li> border-radius </li>
+									      			<li> margin: auto </li>
+									      			<li> text-align and text-decoration </li>
+									      		</ul>
+									      	</li>
+									      	<li> Psuedo Classes
+									      		<ul>
+									      			<li> :hover </li>
+									      			<li> first-child, last-child, and nth-child() </li>
+									      			<li> direct child selector > </li>
+									      			<li> sibling selector + </li>
+									      		</ul>
+									      	</li>
+									      	<li> CSS Positioning</li>
+									      	<li> Creating a Basic Layout From Everything We Have Learned</li>
+									      	<li> REVIEW</li>
+									      </ul>
+									    </div>
+									</dd>
+									
+									<dd class="accordion-navigation">
+									    <a href="#panel12">Objectives</a>
+									    <div id="panel12" class="content">
+									      Students should...
+									      <ul class="square">
+									      	<li> Have a base knowledge of many common CSS properties. </li>
+									      	<li> Understand differences between static, relative, and absolute positioning. </li>
+									      	<li> Have a basic knowledge of more advanced CSS selectors. </li>
+									      	<li> Have the ability to build a basic HTML layout and style it with CSS. </li>
+									      </ul>
+									    </div>
+									</dd>
+								</dl>
+							</div>
+						</div>
+  					</div>
+  					</div>
+				</div>
+
+				<footer class="footer">
+      				<div class="copyright">
+        				<h3>Copyright &copy; 2014 Charleston Digital Corridor</h3>
+        				<img class="cdc_logo" src="img/cdc_logo.png" />
+      				</div>
+    			</footer>
+
+		    </section>
+
+		  <a class="exit-off-canvas"></a>
+
+		  </div>
+		</div>
+
+		
+   </div>
+
+    
+    <script src="js/vendor/jquery.js"></script>
+    <script src="js/foundation.min.js"></script>
+    <script src="js/site.js"></script>
+    <script>
+      $(document).foundation();
+    </script>
   </body>
 </html>
