@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/x-icon" href="img/favicon.ico">
-    <title>Web Basics 101 - CODEcamp Exercises</title>
+    <title>PHP 101 - CODEcamp Exercises</title>
     <link rel="stylesheet" href="css/normalize.css" />
     <link rel="stylesheet" href="css/foundation.css" />
     <link rel="stylesheet" href="css/styles.css" />
@@ -52,7 +52,7 @@
 
 		    <aside class="left-off-canvas-menu nav-height">
 		      <ul class="off-canvas-list">
-		        <li><label>Web Basics 101</label></li>
+		        <li><label>PHP 101</label></li>
 		        <li><a href="index.html">Home</a></li>
 		        <li><a href="exercises.html">Exercises</a></li>
 		        <li><a href="screencasts.html">Screencasts</a></li>
@@ -84,25 +84,15 @@
 			  			<div class="exercise-wrapper">
 				  			<ul class ="exercise-container">
 				  				<li class="exercise-day"> <span> Day 1 </span>
-				  				<!--  COMMENTED OUT LINKS UNDER CLASSES FOR NOW -- FILL LATER
 				  					<ul class="exercise-list">
-					  					<li class="exercise active-type-link" data-index="1"> Variables </li>
-					  					<li class="exercise" data-index="2"> Loops </li>
-					  					<li class="exercise" data-index="3"> Whatever </li>
-					  					<li class="exercise assignment" data-index="4"> Assignment: Text </li>
+					  					<li class="exercise assignment" data-index="1"> Assignment 1 </li>
 				  					</ul>
-				  					-->
 				  				</li>
 			  					
 			  					<li class="exercise-day"> <span> Day 2 </span>
-			  					<!-- COMMENTED OUT LINKS UNDER CLASSES FOR NOW -- FILL LATER
 				  					<ul class="exercise-list">
-					  					<li class="exercise active-type-link" data-index="5"> Variables </li>
-					  					<li class="exercise" data-index="6"> Loops </li>
-					  					<li class="exercise" data-index="7"> Whatever </li>
-					  					<li class="exercise assignment" data-index="8"> Assignment: Text </li>
+					  					<li class="exercise assignment" data-index="2"> Assignment 2 </li>
 				  					</ul>
-				  					-->
 				  				</li>
 
 				  				<li class="exercise-day"> <span> Day 3 </span>
@@ -140,21 +130,19 @@
 				          
 				          <div class="exercise_text active_exercise" data-index="1" >
 
-				            <h2> Practice Makes Perfect! </h2>
+				            <h2> Assignment 1: More on Types </h2>
 				            
 				            
 				            <p class="exercise_box_details">
-				            	CODEcamp is great to get you started, but now you need to take the skills you've learned and put them to use!
+				            Our <strong>getNewWeight()</strong> function accepts two parameters: <strong>$weight</strong> and <strong>$purchased</strong>. We want this function to always return a float value. What does it return when <strong>$purchased</strong> is true? Does it return a different type when <strong>$purchased</strong> is false?
 				            </p>
 
 				            <p class="exercise_box_details">
-				            	Without practice, your skills cannot improve. Try some of the below exercises to test your new knowledge...
 				            	<ul>
-				            		<li>Creating a new site and adding content to your page</li>
-				            		<li>Play around with different background colors</li>
-				            		<li>Test dealing with classes versus IDs</li>
-				            		<li>Create different sized boxes that are different colors, heights, and widths</li>
-				            		<li>Try creating multiple classes and making them all have the same color by writing one "color: blue;" line of code</li>
+				            		<li><strong>Challenge:</strong>What two types does it return depending on the value of $purchased? Why does it return different types? Is there a way to make sure it always returns a float?
+				            		Then you can run `php index.php`</li>
+				            		<li><strong>Week 2 Prep:</strong> In week 1, we talked about strings, integers, floats, and booleans. Take a look at PHP's other types. Pay close attention to arrays.
+				            		<a href="http://php.net/manual/en/language.types.php">Read more here.</a></li>
 				            	</ul>
 				            </p>
 				            
@@ -167,21 +155,24 @@
 
 				          <div class="exercise_text" data-index="2" >
 
-				            <h2> Numbers </h2>
+				            <h2> Assignment 2 </h2>
+				            
+				            
+				            <p class="exercise_box_details">
+				            In week 2, we learned about some additional types (arrays) and control flow syntax (for loops). We also started to look at classes. Let's bring all of this together.
+				            </p>
 
 				            <p class="exercise_box_details">
-				              We can use the javascript console in Google Chrome to write some JS! Open up Google Chrome.
+				            	<ul>
+				            		<li><strong>Challenge 1:</strong> Can you run this script from the command line?
+				            		Tip: Use the `cd` command to move into the same directory.
+				            		Then you can run `php index.php`</li>
+				            		<li><strong>Challenge 2:</strong> We are looping through an array, but the array is empty! Can you add our two blog instances into the array? What happens if you add them more than once?</li>
+				            		<li><strong>Challenge 3:</strong> Our titles are too long for our new blog. In our foreach() loop, we refer to getShortTitle(), but it's broken! Can you add a class method that returns a shortened version of the title? Hint: PHP has a built-in function called `strpos()`</li>
+				            	</ul>
 				            </p>
 				            
 				            <p class="exercise_box_details">
-				              <ul>
-				                <li>Right click anywhere on the page and click 'inspect element'. Then click the console tab. (insert explanation of devtools here)</li>
-				                <li>There are a handful of variable types in javascript (insert explanation of variables here). Let's start with numbers. Type some numbers in your JS console.</li>
-				                <li>We can also do math in our console! Let's try some basic math. Add 2 numbers together. <pre>2 + 7</pre></li>
-				                <li>We can get into the negatives as well. Create a negative math equation <pre>2 * 7 - 100</pre></li>
-				                <li>Decimals also work (kinda). Do some arithmetic with decimals. <pre>.5 * .5</pre><pre>.83 + .17</pre><pre>.999 - 3.212</pre></li>
-				                <li>What about decimal subtraction? <pre>2 - .3</pre><pre>.86 - .177</pre><pre>.3 - .2</pre></li> What happened on that last one?<br>Like in other programming languages, decimals are floating point numbers, meaning the arithmetic can get sticky. Don't always trust your math to be correct! Always check it!
-				              </ul>
 				            </p>
 				            
 				          </div>
