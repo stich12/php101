@@ -96,14 +96,8 @@ div.img-wrapper{
 }
 
 img.logo{
-	width: 100px;
-	height: 100px;
-	position: relative;
-	margin-left: auto;
-	margin-right: auto;
+	margin-top: 13px;
 	vertical-align: middle;
-	top: 50%;
-	transform: translateY(-50%);
 }
 
 div.logo-wrapper{
